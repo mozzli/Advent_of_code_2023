@@ -3,6 +3,7 @@ package day2;
 import day2.enums.Colors;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,9 +17,7 @@ public class Solution {
     private int getSolution1(ArrayList<ArrayList<String>> input) {
         int solution = 0, rowNumber = 1;
         for (ArrayList<String> row : input) {
-            if (isGamePossible(row)) {
-                solution += rowNumber;
-            }
+            if (isGamePossible(row)) solution += rowNumber;
             rowNumber++;
         }
         return solution;
@@ -52,9 +51,7 @@ public class Solution {
             else if (value.contains("blue") && fewestBlue < i) fewestBlue = i;
             else if (value.contains("red") && fewestRed < i) fewestRed = i;
         }
-        fewestCubeList.add(fewestGreen + " green");
-        fewestCubeList.add(fewestBlue + " blue");
-        fewestCubeList.add(fewestRed + " red");
+        Collections.addAll(fewestCubeList, fewestGreen + " green", fewestBlue + " blue", fewestRed + " red");
         return fewestCubeList;
     }
 
@@ -64,8 +61,8 @@ public class Solution {
         for (String row : list) {
             Matcher matcher = pattern.matcher(row);
             while (matcher.find()) {
-                if (solution == 0) solution = Integer.parseInt(matcher.group());
-                else solution *= Integer.parseInt(matcher.group());
+                int number = Integer.parseInt(matcher.group());
+                solution = solution == 0 ? number : solution * number;
             }
         }
         return solution;

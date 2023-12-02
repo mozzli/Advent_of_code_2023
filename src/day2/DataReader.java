@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 class DataReader {
     public static ArrayList<String> getInput() throws IOException {
-        BufferedReader text = new BufferedReader(new FileReader("src/day2/input/input.txt"));
-        ArrayList<String> listOfCommands = new ArrayList<>();
         String line;
+        ArrayList<String> listOfCommands = new ArrayList<>();
+        BufferedReader text = new BufferedReader(new FileReader("src/day2/input/input.txt"));
         while ((line = text.readLine()) != null) listOfCommands.add(line);
         return listOfCommands;
     }
