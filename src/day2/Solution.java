@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Solution {
+class Solution {
 
     public Solution(ArrayList<ArrayList<String>> input) {
         System.out.println("Solution to the first task is: " + getSolution1(input));
