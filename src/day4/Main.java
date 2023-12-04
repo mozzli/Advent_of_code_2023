@@ -1,7 +1,6 @@
 package day4;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static day4.DataReader.getCards;
 import static day4.DataReader.getInput;

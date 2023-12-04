@@ -1,8 +1,5 @@
 package day4;
 
-import utilities.Coordinates;
-import utilities.CoordinatesTable;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -29,13 +26,13 @@ class DataReader {
             while (matcher.find()) {
                 winningNumbers.addAll(getNumbersFromString(matcher.group(2)));
                 playerNumbers.addAll(getNumbersFromString(matcher.group(3)));
-                cardList.add(new Card(winningNumbers,playerNumbers));
+                cardList.add(new Card(winningNumbers, playerNumbers));
             }
         }
         return cardList;
     }
 
-    public static ArrayList<Integer>getNumbersFromString(String input){
+    public static ArrayList<Integer> getNumbersFromString(String input) {
         ArrayList<Integer> numberList = new ArrayList<>();
         Pattern pattern = Pattern.compile("[\\d]+");
         Matcher matcher = pattern.matcher(input);
